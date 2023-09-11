@@ -22,6 +22,11 @@ if [[ -z "$GIT_COMMIT_MESSAGE" ]];then
     exit 1
 fi
 
+if [[ -z "$GIT_COMMIT_MESSAGE" ]];then
+  echo "请输入git commit message"
+  exit 1
+fi
+
 # 直接拷贝源代码到不同的git库下
 cpFunc() {
     cp -rf $PROJECT_NAME ../gitlab/
